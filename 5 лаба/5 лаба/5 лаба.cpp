@@ -36,7 +36,7 @@ struct plane
 int add(plane* salon,int count,int count_1[])
 {
 		cout << "How many passengers"<<'\n';
-		cin >> count;
+		count=onlyNumbers();
 		count+=count_1[0];
 		for (int i = count_1[0]; i < count; i++)
 		{
@@ -55,7 +55,7 @@ void pechati(plane* salon)
 {
 	int passenger;
 	cout << "Please input number student" << '\t';
-	cin >> passenger;
+	passenger=onlyNumbers();
 	passenger-=1;
 	cout << '\n';
 	cout << "------------------Information about student № " << passenger+1  << " ------------------";
@@ -148,15 +148,12 @@ string find;
 }
 int main()
 { 
-	SetConsoleOutputCP(1251);
-	SetConsoleCP(1251);
 	setlocale(LC_ALL, "Russian");
-	int count=100;
+	int count=100000;
 	int count_1[2];
 	count_1[0] = 0;
 	count_1[1] = 0;
 	plane * salon =new plane[count];
-	int n = 256;
 	int number;
 	int flag = 1;
 	while (flag != 0)
