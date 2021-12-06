@@ -83,7 +83,7 @@ void pechati(plane* salon)
 	cout << '\n';
 	cout << " Passenger's name is : " << '\t' << salon[passenger].name;
 	cout << '\n';
-	cout << " Passenger's last name student is : " << '\t' << salon[passenger].surname;
+	cout << " Passenger's last name is : " << '\t' << salon[passenger].surname;
 	cout << '\n';
 	cout << " Company is : " << '\t' << salon[passenger].company;
 	cout << '\n';
