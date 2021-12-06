@@ -45,7 +45,27 @@ int add(plane* salon,int count,int count_1[])
 			cout << "Passenger's last name: "; cin >> salon[i].surname;
 			cout << "Passenger's name: ";      cin >> salon[i].name;
 			cout << "Flight: ";                salon[i].flight = onlyNumbers();
+			while (((salon[i].flight <= 0) && (salon[i].flight >= 0)))
+			{
+				if (((salon[i].flight <= 0) && (salon[i].flight >= 0)))
+				{
+					salon[i].flight = 0;
+					cout << "Prover";
+					salon[i].flight = onlyNumbers();
+				}
+
+			}
 			cout << "Ticket price: ";          salon[i].cost = onlyNumbers();
+			while (((salon[i].cost <= 0) && (salon[i].cost >= 0)))
+			{
+				if (((salon[i].cost <= 0) && (salon[i].cost >= 0)))
+				{
+					salon[i].cost = 0;
+					cout << "Prover";
+					salon[i].cost = onlyNumbers();
+				}
+
+			}
 			cout << "________________________________" << endl;
 		}
 		count_1[0] = count;
@@ -55,8 +75,9 @@ void pechati(plane* salon)
 {
 	int passenger;
 	cout << "Please input number student" << '\t';
-	passenger=onlyNumbers();
+	passenger= onlyNumbers();
 	passenger-=1;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
 	cout << '\n';
 	cout << "------------------Information about student № " << passenger+1  << " ------------------";
 	cout << '\n';
@@ -69,6 +90,7 @@ void pechati(plane* salon)
 	cout << " Flight is : " << '\t' << salon[passenger].flight;
 	cout << '\n';
 	cout << " Price is : " << '\t' << salon[passenger].cost;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	cout << '\n';
 	cout << "------------------ENDING------------------";
 	cout << '\n';
@@ -95,7 +117,9 @@ string find;
 	if (cheking == 0)
 	{
 		cout << endl;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
 		cout << "Not founded";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		cout << endl;
 	}
 	else
@@ -104,7 +128,9 @@ string find;
 		sort(finding_flights, finding_flights + cheking);
 		for (int i = 0; i < cheking; i++)
 		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
 			cout << finding_flights[i] << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		}
 	}
 
@@ -133,7 +159,9 @@ string find;
 	if (cheking == 0)
 	{
 		cout << endl;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
 		cout << "Not founded";
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		cout << endl;
 	}
 	else
@@ -142,7 +170,9 @@ string find;
 		sort(finding_names, finding_names + cheking);
 		for (int i = 0; i < cheking; i++)
 		{
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 9);
 			cout << finding_names[i] << endl;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		}
 	}
 }
@@ -154,6 +184,7 @@ int main()
 	count_1[0] = 0;
 	count_1[1] = 0;
 	plane * salon =new plane[count];
+	int n = 256;
 	int number;
 	int flag = 1;
 	while (flag != 0)
